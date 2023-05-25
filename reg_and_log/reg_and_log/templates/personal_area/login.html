@@ -1,0 +1,14 @@
+{% extends 'personal_area/home.html'%}
+
+{%block title%}Login{%endblock%}
+
+
+{%block content%}
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            {{ auth }}
+        </div>
+        <input type="submit" value="Login">
+    </form>
+{%endblock%}

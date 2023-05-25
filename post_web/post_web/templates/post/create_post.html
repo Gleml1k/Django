@@ -1,0 +1,17 @@
+{% extends 'post/home.html'%}
+
+{%block title%}
+    create post
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h3>New Post</h3>
+        <form method="POST">
+            {% csrf_token %}
+            Форма для добавления записи
+            {{ new_post.as_p }}
+            <input type="submit" value="Save">
+        </form>
+    </div>
+{% endblock %}

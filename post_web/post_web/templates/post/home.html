@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title%}{% endblock%}</title>
+    <style>
+        li{
+            text-decoration: none;
+            display: inline;
+        }
+        span{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2 style="text-align: center"> PROJECT: 'WEB POST' version 1.0</h2>
+    </div>
+    <aside>
+        <div>
+            <ul>
+                <li><a href="{% url 'home'%}">Home</a></li>
+                <li style="margin-left: 10%;"><a href="{% url 'create_post'%}">Create Post</a></li>
+            </ul>
+        </div>
+    </aside>
+    {%block content%}
+    <h4 style="margin-left: 90%;">Total post: {{ total_post }}</h4>
+    <div style="border: solid 2px black; padding: 2%;">
+        {%for field in post%}
+            <span>Title: <a href="">{{ field.title }}</a></span>
+            <span style="margin-left: 75%;">Data: <a href="">{{ field.data }}</a></span>
+        {%endfor%}
+    </div>
+    {%endblock%}
+</body>
+</html>

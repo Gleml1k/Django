@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <style>
+        li{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <div>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'register' %}">Registeration</a>/<a href="{% url 'login' %}">Login</a></li>
+                <li></li>
+            </ul>
+        </div>
+    </aside>
+    {%block content%}
+        {% for name in user %}
+            <div>
+                {{ name.username }}
+                {{ name.data_reg}}
+            </div>
+        {% endfor%}
+    {%endblock%}
+</body>
+</html>

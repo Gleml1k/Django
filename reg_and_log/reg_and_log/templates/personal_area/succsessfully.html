@@ -1,0 +1,10 @@
+{% extends 'personal_area/home.html'%}
+
+{%block title%}{%endblock%}
+{%block content%}
+    {% if user %}
+        <div>
+            <h3>Рады видеть вас вновь {{ user }}</h3>
+        </div>
+    {% endif %}
+{%endblock%}
